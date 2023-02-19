@@ -1,31 +1,32 @@
 import PropTypes from 'prop-types';
+import {Image, Description, List, ListItem} from './Profile.styled'
 
 export const Profile = ({user: {username, tag, avatar, location, stats: {followers, views, likes}}})=> {
   return <div>
-    <div class="description">
-      <img
+    <Description>
+      <Image
         src={avatar}
         alt="User avatar"
         class="avatar"
       />
-      <p class="name">{username}</p>
-      <p class="tag">@{tag}</p>
-      <p class="location">{location}</p>
-    </div>
-    <ul>
-      <li>
+      <h2>{username}</h2>
+      <p>@{tag}</p>
+      <p>{location}</p>
+    </Description>
+    <List>
+      <ListItem>
         <span>Followers</span>
         <span>{followers}</span>
-      </li>
-      <li>
+      </ListItem>
+      <ListItem>
         <span>Views</span>
         <span>{views}</span>
-      </li>
-      <li>
+      </ListItem>
+      <ListItem>
        <span>Likes</span>
         <span>{likes}</span>
-      </li>
-    </ul>
+      </ListItem>
+    </List>
   </div>
 }
 

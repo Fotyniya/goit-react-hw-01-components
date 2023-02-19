@@ -6,31 +6,26 @@ import { FriendsList } from "../FriendList/FriendList";
 import friends from "friends.json"
 import { TransactionHistory } from "../TransactionHistory/TransactionHistory";
 import transactions from "transactions.json"
+import { GlobalStyle } from "components/GlobalStyle";
+import { Layout } from "components/Layout";
+import { Container } from "./App.styled";
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 30,
-        color: '#010101'
-      }}
-    >
-      <div>
+    <Layout>
+      <Container>
         <Profile user = {user}/>
-      </div>
-      <div>
+      </Container>
+      <Container>
         <Statistics data = {data}/>
-      </div>
-      <div>
+      </Container>
+      <Container>
         <FriendsList friends = {friends}/>
-      </div>
-      <div>
+      </Container>
+      <Container>
         <TransactionHistory transactions = {transactions}/>
-      </div>
-    </div>
+      </Container>
+      <GlobalStyle/>
+    </Layout>
   );
 };
